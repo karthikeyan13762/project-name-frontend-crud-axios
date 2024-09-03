@@ -10,7 +10,7 @@ export default function UpdateUser() {
     Age: "",
   });
   const { id } = useParams();
-
+  //
   useEffect(() => {
     axios
       .get("https://project-name-backend-crud-axios.onrender.com/getUser/" + id)
@@ -21,7 +21,10 @@ export default function UpdateUser() {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .put("http://127.0.0.1:3001/updateUser/" + id, data)
+      .put(
+        "https://project-name-backend-crud-axios.onrender.com/updateUser/" + id,
+        data
+      )
       .then((res) => {
         console.log(res);
         setData({
